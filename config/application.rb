@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module TwitterApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.generators.template_engine = :slim  
     config.load_defaults 6.0
     config.generators do |g|
       g.helper false
