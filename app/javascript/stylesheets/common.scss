@@ -1,0 +1,58 @@
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+::before,
+::after {
+  text-decoration: inherit; /* 1 */
+  vertical-align: inherit; /* 2 */
+}
+
+body {
+  background-color: #e4edf5 !important;
+}
+
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+main {
+  margin-top: 5px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.account {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: 100px;
+}
+
+main {
+  display: block;
+}
+
+form {
+  margin-left: 100px;
+  margin-bottom: 25px;
+  .form-group {
+    input {
+      width: 100%;
+      font-size: 1.125rem;
+    }
+  }
+  .btn {
+    border-radius: 18px;
+    margin-right: 20px;
+  }
+}
