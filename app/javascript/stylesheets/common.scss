@@ -10,8 +10,8 @@
   vertical-align: inherit; /* 2 */
 }
 
-body {
-  background-color: #e4edf5 !important;
+html body {
+  background-color: #e4edf5;
 }
 
 header {
@@ -20,6 +20,7 @@ header {
 }
 
 main {
+  display: block;
   margin-top: 5px;
   background-color: #ffffff;
   border-radius: 5px;
@@ -38,14 +39,10 @@ h1 {
   margin-left: 100px;
 }
 
-main {
-  display: block;
-}
-
 form {
   margin-left: 100px;
   margin-bottom: 25px;
-  .form-group {
+  &-group {
     input {
       width: 100%;
       font-size: 1.125rem;
