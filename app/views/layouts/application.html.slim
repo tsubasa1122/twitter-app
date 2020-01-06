@@ -9,7 +9,14 @@ html
     = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    header
-      nav.navbar.navbar-light
-        span.navbar-brand.mb-0.h1 ホーム
-    = yield
+    - if user_signed_in?
+      .container
+        .row.no-gutters
+          = render 'shared/menubar'
+          = yield
+          = render 'shared/searchbar'
+    - else
+      header
+        nav.navbar.navbar-light
+          span.navbar-brand.mb-0.h1 ホーム
+      = yield

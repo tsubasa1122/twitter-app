@@ -1,0 +1,78 @@
+.home-main {
+  padding: 0;
+  border: 1px solid #dbdbdb;
+  margin-top: 5px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  h3 {
+    font-size: 18px;
+    padding: 10px;
+    border-bottom: 1px solid #dbdbdb;
+  }
+  form {
+    height: 105px;
+    margin: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dbdbdb;
+    .form-inner {
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between;
+      .main-profile-img {
+        margin: 5px 10px;
+      }
+      .inner {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: -webkit-right;
+        .tweet-area {
+          margin-top: 15px;
+          height: 40px;
+          border: none;
+        }
+        .btn-primary {
+          width: 95px;
+        }
+      }
+    }
+  }
+  .main-profile-img {
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+  }
+  .border-contents {
+    width: 100%;
+    height: 15px;
+    background-color: #e4edf5;
+  }
+  .contents {
+    border-top: 1px solid #dbdbdb;
+    .tweet-content {
+      width: 100%;
+      border-bottom: 1px solid #dbdbdb;
+      display: inline-flex;
+      padding: 10px;
+      .inner {
+        .user-detail {
+          padding-left: 3px;
+          .name {
+            font-weight: bold;
+          }
+          .username {
+            color: #9f9e9e;
+            padding: 0 5px;
+          }
+          .created_at {
+            color: #9f9e9e;
+          }
+        }
+        .post-content {
+          margin-top: 5px;
+          padding-left: 3px;
+        }
+      }
+    }
+  }
+}

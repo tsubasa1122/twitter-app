@@ -19,6 +19,17 @@ header {
   border-bottom: 1px solid #c0c0c0;
 }
 
+.no-gutters {
+  margin: 0;
+  padding: 0;
+}
+
+.no-gutters　> .col,
+.no-gutters　> [class*="col-"] {
+  margin:0;
+  padding:0;
+}
+
 main {
   display: block;
   margin-top: 5px;
@@ -29,6 +40,11 @@ main {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 .account {
@@ -51,5 +67,55 @@ form {
   .btn {
     border-radius: 18px;
     margin-right: 20px;
+  }
+}
+
+.menu{
+  text-align: left;
+  background-color: #ffffff;
+  margin: 7px 10px 0 0;
+  padding: 10px;
+  border-radius: 5px;
+  height: 330px;
+  .logo {
+    margin-left: 20px;
+  }
+  &-list {
+    margin-left: 20px;
+  }
+  img {
+    width: 32px;
+  }
+  li {
+    margin: 20px 0 20px 0;
+    a {
+      color: #212529;
+      .profile-img {
+        border-radius: 30px;
+      }
+      span {
+        padding-left: 10px;
+        font-weight: bold;
+        vertical-align: middle;
+      }
+    }
+  }
+  .tweet-btn{
+    width: 90%;
+    margin-left: 15px;
+    border-radius: 30px;
+  }
+}
+
+.searchbar {
+  margin-top: 7px;
+  margin-left: 10px;
+  .search-area {
+    width: 100%;
+    border: none;
+    background-color: #dddddd;
+    height: 35px;
+    border-radius: 30px;
+    padding-left: 10px;
   }
 }
