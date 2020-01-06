@@ -12,28 +12,7 @@ html
     - if user_signed_in?
       .container
         .row.no-gutters
-          .menu.col
-            .logo
-              = link_to root_path do
-                = image_tag 'logo.svg',alt: 'logo', class: 'logo-img'
-            ul.menu-list
-              li
-                = link_to root_path do
-                  = image_tag 'home.svg', alt: 'home'
-                  span ホーム
-              li
-                = link_to "#" do
-                  = image_tag 'search.svg', alt: 'search'
-                  span 検索
-              li
-                = link_to "#" do
-                  = image_tag 'profile.png', alt: 'profile', class: 'profile-img'
-                  span プロフィール
-              li
-                = link_to destroy_user_session_path, method: :delete do
-                  = image_tag 'logout.svg', alt: 'logout'
-                  span ログアウト
-            button.btn.btn-primary.tweet-btn ツイート
+          = render 'shared/menubar'
           = yield
           = render 'shared/searchbar'
     - else
