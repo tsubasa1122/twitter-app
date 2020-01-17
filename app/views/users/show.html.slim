@@ -1,2 +1,53 @@
-h1 Users#show
-p Find me in app/views/users/show.html.slim
+.userProfile.col-6
+  h3 つばさ
+  .userProfile__bg
+    = image_tag 'bg.jpeg', alt: 'bg_img', class: 'userProfile__bg__img'
+  .userDetail
+    .userDetail__edit
+      .userDetail__edit__img
+        = image_tag  'profile.png', alt: 'profile', class: 'userDetail__img'
+      button.btn.btn-link.userDetail__edit__button プロフィールを編集
+    .userDetail__content
+      h4.userDetail__content__name 藍坊主
+      p.userDetail__content__username @tsubasa1122
+      p.userDetail__content__description こんにちは！エンジニアをやっています！よろしくお願い致します！
+      p.userDetail__content__location 東京都
+      p.userDetail__content__website http://localhost
+  .border-contents
+  .contents
+    .tweet-content
+      = image_tag 'profile.png', alt: 'profile', class: 'main-profile-img'
+      .inner
+        .user-detail
+          span.name 藍坊主
+          span.username @aobouzu
+          span.created_at 13分
+        .post-content
+          p あけましておめでとうございます！今年もよろしくお願いします！
+    .tweet-content
+      = image_tag 'profile.png', alt: 'profile', class: 'main-profile-img'
+      .inner
+        .user-detail
+          span.name 藍坊主
+          span.username @aobouzu
+          span.created_at 13分
+        .post-content
+          p あけましておめでとうございます！今年もよろしくお願いします！
+    .tweet-content
+      = image_tag 'profile.png', alt: 'profile', class: 'main-profile-img'
+      .inner
+        .user-detail
+          span.name 藍坊主
+          span.username @aobouzu
+          span.created_at ・13分
+        .post-content
+          p あけましておめでとうございます！今年もよろしくお願いします！
+    .tweet-content
+      = image_tag 'profile.png', alt: 'profile', class: 'main-profile-img'
+      .inner
+        .user-detail
+          span.name 藍坊主
+          span.username @aobouzu
+          span.created_at 13分
+        .post-content
+          p あけましておめでとうございます！今年もよろしくお願いします！
