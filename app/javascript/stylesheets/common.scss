@@ -119,3 +119,32 @@ form {
     padding-left: 10px;
   }
 }
+
+.contents {
+  border-top: 1px solid #dbdbdb;
+  .tweet-content {
+    width: 100%;
+    border-bottom: 1px solid #dbdbdb;
+    display: inline-flex;
+    padding: 10px;
+    .inner {
+      .user-detail {
+        padding-left: 3px;
+        .name {
+          font-weight: bold;
+        }
+        .username {
+          color: #9f9e9e;
+          padding: 0 5px;
+        }
+        .created_at {
+          color: #9f9e9e;
+        }
+      }
+      .post-content {
+        margin-top: 5px;
+        padding-left: 3px;
+      }
+    }
+  }
+}
