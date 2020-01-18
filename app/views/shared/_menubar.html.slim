@@ -12,7 +12,7 @@
         = image_tag 'search.svg', alt: 'search'
         span 検索
     li
-      = link_to "#" do
+      = link_to user_path(current_user.id) do
         = image_tag 'profile.png', alt: 'profile', class: 'profile-img'
         span プロフィール
     li
