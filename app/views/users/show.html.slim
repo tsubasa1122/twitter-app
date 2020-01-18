@@ -1,17 +1,17 @@
-.userProfile.col-6
+.user-profile.col-6
   h3 つばさ
-  .userProfile__bg
-    = image_tag 'bg.jpeg', alt: 'bg_img', class: 'userProfile__bg__img'
-  .userDetail
-    .userDetail__edit
-      .userDetail__edit__img
-        = image_tag  'profile.png', alt: 'profile', class: 'userDetail__img'
-      button.btn.btn-link.userDetail__edit__button プロフィールを編集
-    .userDetail__content
-      h4.userDetail__content__name 藍坊主
-      p.userDetail__content__username @tsubasa1122
-      p.userDetail__content__description こんにちは！エンジニアをやっています！よろしくお願い致します！
-      p.userDetail__content__location 東京都
-      p.userDetail__content__website http://localhost
+  .user-profile__bg
+    = image_tag 'bg.jpeg', alt: 'bg_img', class: 'user-profile__bg__img'
+  .user-detail
+    .user-detail__edit
+      .user-detail__edit__img
+        = image_tag  'profile.png', alt: 'profile', class: 'user-detail__img'
+      button.btn.btn-link.user-detail__edit__button プロフィールを編集
+    .user-detail__content
+      h4.user-detail__content__name 藍坊主
+      p.user-detail__content__username @tsubasa1122
+      p.user-detail__content__description こんにちは！エンジニアをやっています！よろしくお願い致します！
+      p.user-detail__content__location 東京都
+      p.user-detail__content__website http://localhost
   .border-contents
   = render 'shared/tweet_contents'
