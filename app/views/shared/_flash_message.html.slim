@@ -1,0 +1,6 @@
+- if flash[:notice]
+  .alert.alert-success
+    p = flash[:notice]
+- elsif flash[:alert]
+  .alert.alert-danger
+    p = flash[:alert]

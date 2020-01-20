@@ -11,6 +11,7 @@ html
   body
     - if user_signed_in?
       .container
+        = render 'shared/flash_message'
         .row.no-gutters
           = render 'shared/menubar'
           = yield
