@@ -4,6 +4,7 @@ class CreateUserProfiles < ActiveRecord::Migration[6.0]
       t.references :user, foreign_key: true
       t.string :name, null: false
       t.string :account_name, null: false
+      t.string :description
       t.string :location
       t.string :website
 

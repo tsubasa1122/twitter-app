@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_01_18_072528) do
     t.bigint "user_id"
     t.string "name", null: false
     t.string "account_name", null: false
+    t.string "description"
     t.string "location"
     t.string "website"
     t.datetime "created_at", precision: 6, null: false
