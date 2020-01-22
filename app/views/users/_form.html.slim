@@ -1,0 +1,21 @@
+.modal.js-modal
+  .modal__bg.js-modal-close
+  .modal__content
+    = form_with model: user_profile, url: user_path, method: :put, local: true do |f|
+      .form-group
+        label 名前
+        = f.text_field :name, autofocaus: true, autocomplete: "name", class: "form-control", placeholder: "名前"
+      .form-group
+        label アカウント名
+        = f.text_field :account_name, autofocaus: true, autocomplete: "account_name", class: "form-control", placeholder: "アカウント名"
+      .form-group
+        label 自己紹介
+        = f.text_field :description, autofocaus: true, autocomplete: "description", class: "form-control", placeholder: "説明"
+      .form-group
+        label Location
+        = f.text_field :location, autofocaus: true, autocomplete: "location", class: "form-control", placeholder: "Location"
+      .form-group
+        label Website
+        = f.text_field :website, sutofocaus: true, autocomplete: "website", class: "form-control", placeholder: "Website"
+        .actions
+          = f.submit "登録する", class: "btn btn-primary"

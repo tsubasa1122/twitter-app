@@ -4,18 +4,19 @@
       .col-6.align-self-center
         h2.account
           | アカウントを作成
-        = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+        = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |user|
           = render "devise/shared/error_messages", resource: resource
+          = user.fields_for :user_profile do |user_profile|
+            .form-group
+              = user_profile.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "名前"
+            .form-group
+              = user_profile.text_field :account_name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "ユーザー名"
           .form-group
-            = f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "名前"
+            = user.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス"
           .form-group
-            = f.text_field :username, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "ユーザー名"
+            = user.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "パスワード"
           .form-group
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス"
-          .form-group
-            = f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "パスワード"
-          .form-group
-            = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "パスワード確認"
+            = user.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "パスワード確認"
           .actions
-            = f.submit "登録する", class: "btn btn-primary"
+            = user.submit "登録する", class: "btn btn-primary"
             = render "devise/shared/links"

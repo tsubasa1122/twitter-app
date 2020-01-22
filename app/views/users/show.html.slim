@@ -5,13 +5,21 @@
   .user-detail
     .user-detail__edit
       .user-detail__edit__img
-        = image_tag  'profile.png', alt: 'profile', class: 'user-detail__img'
-      button.btn.btn-link.user-detail__edit__button プロフィールを編集
+        = image_tag  'mysteryman.png', alt: 'profile', class: 'user-detail__img'
+      - if current_user.id == @user.id
+        button.btn.btn-link.user-detail__edit__button.js-modal-open プロフィールを編集
     .user-detail__content
-      h4.user-detail__content__name 藍坊主
-      p.user-detail__content__username @tsubasa1122
-      p.user-detail__content__description こんにちは！エンジニアをやっています！よろしくお願い致します！
-      p.user-detail__content__location 東京都
-      p.user-detail__content__website http://localhost
+      h4.user-detail__content__name
+        = @user_profile.name
+      p.user-detail__content__username
+        = "@#{@user_profile.account_name}"
+      p.user-detail__content__description
+        = @user_profile.description
+      p.user-detail__content__location
+        = @user_profile.location
+      p.user-detail__content__website
+        = @user_profile.website
   .border-contents
   = render 'shared/tweet_contents'
+  - if current_user.id == @user.id
+    = render 'form', user_profile: @user_profile
