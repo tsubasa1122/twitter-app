@@ -20,10 +20,7 @@ class UserProfile < ApplicationRecord
   end
 
   def profile_image_url
-    if profile_image.attached?
-      profile_image
-    else
-      ActionController::Base.helpers.asset_path('mysteryman.png')
-    end
+    return profile_image if profile_image.attached?
+    ActionController::Base.helpers.asset_path('mysteryman.png')
   end
 end
