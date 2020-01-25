@@ -17,5 +17,7 @@
       .form-group
         label Website
         = f.text_field :website, sutofocaus: true, autocomplete: "website", class: "form-control", placeholder: "Website"
+      .form-group
+        = f.file_field :profile_image, accept: "image/*"
         .actions
           = f.submit "登録する", class: "btn btn-primary"
