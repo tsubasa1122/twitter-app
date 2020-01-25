@@ -10,10 +10,10 @@ class UserProfile < ApplicationRecord
   validate :file_type_image
 
   def file_type_image
-    errors.add(:profile_image, "画像データではありません。") unless image?
+    errors.add(:profile_image, "画像データではありません。") unless content_type_image?
   end
 
-  def image?
+  def content_type_image?
     return nil unless profile_image.attached?
 
     %w[image/jpg image/jpeg image/png image/gif].include?(profile_image.blob.content_type)
