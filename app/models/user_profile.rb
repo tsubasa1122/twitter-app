@@ -18,4 +18,12 @@ class UserProfile < ApplicationRecord
 
     %w[image/jpg image/jpeg image/png image/gif].include?(profile_image.blob.content_type)
   end
+
+  def profile_image_url
+    if profile_image.attached?
+      profile_image
+    else
+      ActionController::Base.helpers.asset_path('mysteryman.png')
+    end
+  end
 end
