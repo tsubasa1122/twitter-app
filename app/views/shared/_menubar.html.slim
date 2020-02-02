@@ -28,6 +28,6 @@
           = image_tag current_user.user_profile.profile_image_url, alt: 'profile', class: 'main-profile-img'
         .inner
           = f.text_area :content, class: "tweet-area", placeholder: "いまどうしてる？"
-        a href="" class="modal-close-button" 閉じる　
+        span class="modal-close-button" 閉じる　
         = f.submit "ツイート", class: "btn btn-primary"
 
