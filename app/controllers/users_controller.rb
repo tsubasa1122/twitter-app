@@ -22,5 +22,6 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
     @user_profile = @user.user_profile
+    @tweet = Tweet.new(user_id: current_user.id)
   end
 end

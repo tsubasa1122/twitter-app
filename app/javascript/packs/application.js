@@ -6,6 +6,7 @@
 import 'bootstrap';
 import '../stylesheets/application';
 import './user';
+import './tweet';
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()

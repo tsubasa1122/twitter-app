@@ -13,7 +13,7 @@ html
       .container
         = render 'shared/flash_message'
         .row.no-gutters
-          = render 'shared/menubar'
+          = render 'shared/menubar', tweet: @tweet
           = yield
           = render 'shared/searchbar'
     - else

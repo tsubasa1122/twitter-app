@@ -19,4 +19,14 @@
       = link_to destroy_user_session_path, method: :delete do
         = image_tag 'logout.svg', alt: 'logout'
         span ログアウト
-  button.btn.btn-primary.tweet-btn ツイート
+  button.btn.btn-primary.tweet-btn.tweet-modal-open ツイート
+  .modal.tweet-js-modal
+    .modal__bg.tweet-modal-close
+    .modal__content
+      = form_with model: tweet, url: user_tweets_path(current_user.id), local: true do |f|
+        .form-inner
+          = image_tag current_user.user_profile.profile_image_url, alt: 'profile', class: 'main-profile-img'
+        .inner
+          = f.text_area :content, class: "tweet-area", placeholder: "いまどうしてる？"
+        = f.submit "ツイート", class: "btn.btn-primary"
+
