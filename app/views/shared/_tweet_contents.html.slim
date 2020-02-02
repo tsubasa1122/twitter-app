@@ -4,8 +4,9 @@
       = image_tag tweet.user_profile.profile_image_url, alt: 'profile', class: 'main-profile-img'
       .inner
         .user-name
-          span.name = tweet.user_profile.name
-          span.username = "@#{tweet.user_profile.account_name}"
+          = link_to user_path(tweet.user_id) do
+            span.name = tweet.user_profile.name
+            span.username = "@#{tweet.user_profile.account_name}"
           span.created_at = tweet.user_profile.created_at.strftime("%Y年%m月%d日")
         .post-content
           p = tweet.content
