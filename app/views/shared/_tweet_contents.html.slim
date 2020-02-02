@@ -1,37 +1,11 @@
 .contents
-  .tweet-content
-    = image_tag 'mysteryman.png', alt: 'profile', class: 'main-profile-img'
-    .inner
-      .user-name
-        span.name 藍坊主
-        span.username @aobouzu
-        span.created_at 13分
-      .post-content
-        p あけましておめでとうございます！今年もよろしくお願いします！
-  .tweet-content
-    = image_tag 'mysteryman.png', alt: 'profile', class: 'main-profile-img'
-    .inner
-      .user-name
-        span.name 藍坊主
-        span.username @aobouzu
-        span.created_at 13分
-      .post-content
-        p あけましておめでとうございます！今年もよろしくお願いします！
-  .tweet-content
-    = image_tag 'mysteryman.png', alt: 'profile', class: 'main-profile-img'
-    .inner
-      .user-name
-        span.name 藍坊主
-        span.username @aobouzu
-        span.created_at ・13分
-      .post-content
-        p あけましておめでとうございます！今年もよろしくお願いします！
-  .tweet-content
-    = image_tag 'mysteryman.png', alt: 'profile', class: 'main-profile-img'
-    .inner
-      .user-name
-        span.name 藍坊主
-        span.username @aobouzu
-        span.created_at 13分
-      .post-content
-        p あけましておめでとうございます！今年もよろしくお願いします！
+  - tweets.each do |tweet|
+    .tweet-content
+      = image_tag tweet.user_profile.profile_image_url, alt: 'profile', class: 'main-profile-img'
+      .inner
+        .user-name
+          span.name = tweet.user_profile.name
+          span.username = "@#{tweet.user_profile.account_name}"
+          span.created_at = tweet.user_profile.created_at.strftime("%Y年%m月%d日")
+        .post-content
+          p = tweet.content

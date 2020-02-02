@@ -20,6 +20,6 @@
       p.user-detail__content__website
         = @user_profile.website
   .border-contents
-  = render 'shared/tweet_contents'
+  = render 'shared/tweet_contents', tweets: @tweets
   - if current_user.id == @user.id
     = render 'form', user_profile: @user_profile

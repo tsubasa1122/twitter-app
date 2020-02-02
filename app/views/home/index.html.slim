@@ -7,4 +7,4 @@
       = f.text_area :content, class: "tweet-area", placeholder: "いまどうしてる？"
     = f.submit "ツイート", class: "btn btn-primary"
   .border-contents
-  = render 'shared/tweet_contents'
+  = render 'shared/tweet_contents', tweets: @tweets
