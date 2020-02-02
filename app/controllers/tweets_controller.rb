@@ -3,7 +3,6 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(tweet_params)
     @tweet.user_id = params[:user_id]
-    binding.pry
     if @tweet.save
       flash[:notice] = "Tweetが投稿されました。"
       redirect_to root_path
