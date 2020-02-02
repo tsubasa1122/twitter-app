@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :user_profile, dependent: :destroy, inverse_of: :user
+  has_many :tweets, dependent: :destroy
   accepts_nested_attributes_for :user_profile
 end
