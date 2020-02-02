@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show update]
   
-  def show; end
+  def show
+    @tweets = Tweet.where(user_id: params[:id]).order(created_at: "DESC")
+  end
 
   def update
     if @user_profile.update(user_profile_params)
