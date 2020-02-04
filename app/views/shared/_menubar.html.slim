@@ -23,7 +23,7 @@
   .modal.tweet-js-modal
     .modal__bg.tweet-modal-close
     .modal__content
-      = form_with model: tweet, url: user_tweets_path(current_user.id), local: true do |f|
+      = form_with model: tweet, url: tweets_path, local: true do |f|
         .form-inner
           = image_tag current_user.user_profile.profile_image_url, alt: 'profile', class: 'main-profile-img'
         .inner
