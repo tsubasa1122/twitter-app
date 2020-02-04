@@ -27,6 +27,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-byebug'
+  gem 'bullet', group: 'development'
 end
 
 group :test do
