@@ -136,6 +136,7 @@ form {
         padding-left: 3px;
         .name {
           font-weight: bold;
+          color: #000000;
         }
         .username {
           color: #9f9e9e;
@@ -149,6 +150,37 @@ form {
         margin-top: 5px;
         padding-left: 3px;
       }
+    }
+  }
+}
+
+.tweet-js-modal {
+  form {
+    margin: 0;
+    .form-inner {
+      margin-bottom: 10px;
+      margin-left: 25px;
+      .main-profile-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+    }
+    .inner {
+      text-align: center;
+      .tweet-area {
+        width: 90%;
+        height: 80px;
+      }
+    }
+    .modal-close-button {
+      margin-left: 25px;
+      cursor : pointer;
+    }
+    .btn-primary {
+      width: 95px;
+      float: right;
+      margin-right: 25px;
     }
   }
 }
