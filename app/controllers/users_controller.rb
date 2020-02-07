@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show update]
   
   def show
-    @tweets = Tweet.where(user_id: params[:id]).includes(:user).order(created_at: "DESC")
+    @tweets = Tweet.where(user_id: params[:id]).includes(:user).order(created_at: "DESC").with_attached_image
   end
 
   def update
