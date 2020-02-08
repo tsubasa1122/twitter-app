@@ -11,5 +11,5 @@
         .post-content
           p = tweet.content
           - if tweet.images.attached?
-          - tweet.images.each do |image|
-            = image_tag image
+            - tweet.images.each do |image|
+              = image_tag image
