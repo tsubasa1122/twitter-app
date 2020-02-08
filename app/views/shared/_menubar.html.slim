@@ -29,7 +29,7 @@
         .inner
           = f.text_area :content, class: "tweet-area", placeholder: "いまどうしてる？"
         .inner-file
-          = f.file_field :image
+          = f.file_field :images, multiple: true
         span class="modal-close-button" 閉じる　
         = f.submit "ツイート", class: "btn btn-primary"
 

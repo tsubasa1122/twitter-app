@@ -6,7 +6,7 @@
     .inner
       = f.text_area :content, class: "tweet-area", placeholder: "いまどうしてる？"
     .inner-file
-      = f.file_field :image
+      = f.file_field :images, multiple: true
     = f.submit "ツイート", class: "btn btn-primary"
   .border-contents
   = render 'shared/tweet_contents', tweets: @tweets
