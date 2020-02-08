@@ -10,3 +10,6 @@
           span.created_at = tweet.user_profile.created_at.strftime("%Y年%m月%d日")
         .post-content
           p = tweet.content
+          - if tweet.images.attached?
+            - tweet.images.each do |image|
+              = image_tag image
