@@ -14,7 +14,7 @@ class UserProfile < ApplicationRecord
   end
 
   def content_type_image?
-    return nil unless profile_image.attached?
+    return '' unless profile_image.attached?
 
     %w[image/jpg image/jpeg image/png image/gif].include?(profile_image.blob.content_type)
   end
