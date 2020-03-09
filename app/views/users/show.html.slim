@@ -8,10 +8,11 @@
         = image_tag  @user_profile.profile_image_url, alt: 'profile', class: 'user-detail__img'
       - if current_user.id == @user.id
         button.btn.btn-link.user-detail__edit__button.js-modal-open プロフィールを編集
-      - elsif @user.followed_by?(current_user)
-        button.btn.btn-primary フォロー中
       - else
-        button.btn.btn-link.user-detail__follow__button フォロー
+        - if @user.followed_by?(current_user)
+          button.btn.btn-primary
+        - else
+          = link_to "フォロー", user_relationships_path(@user.id), method: :post, class: "btn btn-link user-detail__follow__button"
 
     .user-detail__content
       h4.user-detail__content__name
