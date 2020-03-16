@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   
   def show
     @tweets = Tweet.where(user_id: params[:id]).includes(:user).order(created_at: "DESC").with_attached_images
+    @follow_users_count = @user.active_relationships.count
+    @follower_users_count = @user.passive_relationships.count
   end
 
   def update
@@ -13,6 +15,16 @@ class UsersController < ApplicationController
       flash[:alert] = "更新に失敗しました。"
       render :show
     end
+  end
+
+  def follow
+    user = User.find(params[:id])
+    @users = user.followings
+  end
+
+  def follower
+    user = User.find(params[:id])
+    @users = user.followers
   end
 
   private

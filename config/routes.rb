@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   }
   resources :users, only: %i[show update] do
     resource :relationships, only: %i[create destroy]
-    get :followers, on: :member
-    get :follows, on: :member
+    get :follower, on: :member
+    get :follow, on: :member
   end
   resources :tweets, only: %i[create]
 end

@@ -25,6 +25,11 @@
         = @user_profile.location
       p.user-detail__content__website
         = @user_profile.website
+    .user-follow
+      = link_to follow_user_path(@user.id) do
+        span #{@follow_users_count} フォロー中
+      = link_to follower_user_path(@user.id) do
+        span #{@follower_users_count} フォロワー
   .border-contents
   = render 'shared/tweet_contents', tweets: @tweets
   - if current_user.id == @user.id
