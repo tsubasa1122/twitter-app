@@ -10,7 +10,9 @@
         button.btn.btn-link.user-detail__edit__button.js-modal-open プロフィールを編集
       - else
         - if @user.followed_by?(current_user)
-          = link_to "フォロー", user_relationships_path(@user.id), method: :delete, data: { confirm: "フォローを解除しますか？" }, class: "btn btn-primary user-detail__follow__button"
+          = link_to user_relationships_path(@user.id), method: :delete, data: { confirm: "フォローを解除しますか？" },class: "btn btn-primary user-detail__follow__button" do
+            .nomal フォロー
+            .hover フォロー解除
         - else
           = link_to "フォロー", user_relationships_path(@user.id), method: :post, class: "btn btn-link user-detail__follow__button"
 

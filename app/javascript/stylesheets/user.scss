@@ -44,6 +44,15 @@
         border: 1px solid;
         margin-top: 15px;
         margin-right: 20px;
+        & .hover {
+          display: none;
+        }
+        &:hover .nomal {
+          display: none;
+        }
+        &:hover .hover {
+          display: inline;
+        }
       }
     }
     &__content {
