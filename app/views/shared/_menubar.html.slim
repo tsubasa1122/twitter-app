@@ -13,7 +13,7 @@
         span 検索
     li
       = link_to user_path(current_user.id) do
-        = image_tag 'profile.png', alt: 'profile', class: 'profile-img'
+        = image_tag current_user.user_profile.profile_image_url, alt: 'profile', class: 'profile-img'
         span プロフィール
     li
       = link_to destroy_user_session_path, method: :delete do
