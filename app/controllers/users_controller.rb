@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show update]
   
   def show
-    @tweets = Tweet.where(user_id: params[:id]).includes(:user).order(created_at: "DESC").with_attached_images
+    @tweets = Tweet.where(user_id: params[:id]).preload(:user).order(created_at: "DESC").with_attached_images
     @follow_users_count = @user.active_relationships.count
     @follower_users_count = @user.passive_relationships.count
   end

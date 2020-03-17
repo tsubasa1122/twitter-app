@@ -5,5 +5,5 @@ class Tweet < ApplicationRecord
 
   has_many_attached :images
 
-  scope :user_detail, -> { includes(user: [user_profile: [profile_image_attachment: :blob]]) }
+  scope :user_detail, -> { preload(:user).eager_load(user: [user_profile: [profile_image_attachment: :blob]]) }
 end
