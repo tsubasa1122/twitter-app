@@ -8,6 +8,14 @@
         = image_tag  @user_profile.profile_image_url, alt: 'profile', class: 'user-detail__img'
       - if current_user.id == @user.id
         button.btn.btn-link.user-detail__edit__button.js-modal-open プロフィールを編集
+      - else
+        - if @user.followed_by?(current_user)
+          = link_to user_relationships_path(@user.id), method: :delete, data: { confirm: "フォローを解除しますか？" },class: "btn btn-primary user-detail__follow__button" do
+            .nomal フォロー
+            .hover フォロー解除
+        - else
+          = link_to "フォロー", user_relationships_path(@user.id), method: :post, class: "btn btn-link user-detail__follow__button"
+
     .user-detail__content
       h4.user-detail__content__name
         = @user_profile.name
@@ -19,6 +27,11 @@
         = @user_profile.location
       p.user-detail__content__website
         = @user_profile.website
+    .user-follow
+      = link_to follow_user_path(@user.id) do
+        span #{@follow_users_count} フォロー中
+      = link_to follower_user_path(@user.id) do
+        span #{@follower_users_count} フォロワー
   .border-contents
   = render 'shared/tweet_contents', tweets: @tweets
   - if current_user.id == @user.id
