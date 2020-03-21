@@ -7,9 +7,9 @@ class User < ApplicationRecord
   has_one :user_profile, dependent: :destroy, inverse_of: :user
   has_many :tweets, dependent: :destroy
   accepts_nested_attributes_for :user_profile
-  has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
+  has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id, dependent: :destroy
   has_many :followings, through: :active_relationships, source: :followed
-  has_many :passive_relationships, class_name: "Relationship", foreign_key: :followed_id
+  has_many :passive_relationships, class_name: "Relationship", foreign_key: :followed_id, dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :following
 
   def followed_by?(user)
