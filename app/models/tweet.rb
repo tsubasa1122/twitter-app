@@ -1,5 +1,6 @@
 class Tweet < ApplicationRecord
   belongs_to :user
+  has_many :favorites, dependent: :destroy
   delegate :user_profile, to: :user
   validates :content, length: { maximum: 140 }
 
