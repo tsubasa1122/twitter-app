@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'favorites/create'
-  get 'favorites/destroy'
   root to: 'home#index'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
@@ -10,5 +8,7 @@ Rails.application.routes.draw do
     get :follower, on: :member
     get :follow, on: :member
   end
-  resources :tweets, only: %i[create]
+  resources :tweets, only: %i[create] do
+    resource :favorites, only: %i[create destroy]
+  end
 end
