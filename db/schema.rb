@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(version: 2020_03_31_031530) do
   end
 
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "tweets_id"
+    t.bigint "user_id"
+    t.bigint "tweet_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["tweets_id"], name: "index_favorites_on_tweets_id"
-    t.index ["users_id"], name: "index_favorites_on_users_id"
+    t.index ["tweet_id"], name: "index_favorites_on_tweet_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -86,8 +86,8 @@ ActiveRecord::Schema.define(version: 2020_03_31_031530) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "favorites", "tweets", column: "tweets_id"
-  add_foreign_key "favorites", "users", column: "users_id"
+  add_foreign_key "favorites", "tweets"
+  add_foreign_key "favorites", "users"
   add_foreign_key "relationships", "users", column: "followed_id"
   add_foreign_key "relationships", "users", column: "following_id"
   add_foreign_key "tweets", "users"
