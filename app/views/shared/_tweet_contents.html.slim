@@ -13,3 +13,19 @@
           - if tweet.images.attached?
             - tweet.images.each do |image|
               = image_tag image
+          - if user_signed_in?
+            - if tweet.favorited_by?(current_user)
+              - link_to tweet_favorites_path(tweet.id), method: :delete do
+                span.favorite
+                  = image_tag 'heart-before.svg', alt: 'heart-before'
+                  = tweet.favorites.count
+            - else
+              = link_to tweet_favorites_path(tweet.id), method: :post do
+                span.favorite
+                  = image_tag 'heart-before.svg', alt: 'heart-before'
+                  = tweet.favorites.count
+          - else
+            p
+              span.favorite
+                = image_tag 'heart-before.svg', alt: 'heart-before'
+                = tweet.favorites.count
