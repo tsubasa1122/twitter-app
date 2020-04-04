@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     get :follower, on: :member
     get :follow, on: :member
   end
-  resources :tweets, only: %i[create index] do
+  resources :tweets, only: %i[create] do
+    get :search, to: 'tweets#search', on: :collection
     resource :favorites, only: %i[create destroy]
   end
 end
