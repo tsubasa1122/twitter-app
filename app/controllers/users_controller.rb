@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     @tweets = Tweet.where(user_id: params[:id]).preload(:user).order(created_at: "DESC").with_attached_images
     @follow_users_count = @user.active_relationships.count
     @follower_users_count = @user.passive_relationships.count
-    @search = Tweet.search(params[:q])
   end
 
   def update
