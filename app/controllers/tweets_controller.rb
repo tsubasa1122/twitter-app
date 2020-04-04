@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
 
   def search
     @search = Tweet.ransack(params[:q])
-    @tweets = @search.result
+    @tweets = @search.result.user_detail.with_attached_images.order(created_at: "DESC")
   end
 
   def create
