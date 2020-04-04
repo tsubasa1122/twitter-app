@@ -1,7 +1,8 @@
 class TweetsController < ApplicationController
 
-  def index
-    
+  def search
+    @search = Tweet.ransack(params[:q])
+    @tweets = @search.result
   end
 
   def create
