@@ -41,3 +41,4 @@ gem 'slim-rails'
 gem 'html2slim'
 gem 'devise'
 gem "aws-sdk-s3", require: false
+gem "ransack"

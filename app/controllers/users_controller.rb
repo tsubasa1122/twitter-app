@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show update]
+  before_action :set_search_tweet, only: %i[show follow follower]
   
   def show
     @tweets = Tweet.where(user_id: params[:id]).preload(:user).order(created_at: "DESC").with_attached_images
@@ -37,5 +38,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user_profile = @user.user_profile
     @tweet = Tweet.new(user_id: current_user.id)
+  end
+
+  def set_search_tweet
+    @search = Tweet.search(params[:q])
   end
 end
